@@ -1,4 +1,5 @@
-const { colors } = require(`tailwindcss/defaultTheme`)
+const { colors: defColors } = require(`tailwindcss/defaultTheme`)
+const colors = require("tailwindcss/colors")
 
 module.exports = {
   mode: "jit", // see https://tailwindcss.com/docs/just-in-time-mode
@@ -7,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.indigo,
+        primary: defColors.indigo,
+        orange: colors.orange,
       },
       container: {
         center: true,

@@ -46,7 +46,9 @@
         "sections.large-video",
         "sections.rich-text",
         "sections.pricing",
-        "sections.lead-form"
+        "sections.lead-form",
+        "sections.test-component",
+        "sections.new-test-component"
       ],
       "pluginOptions": {
         "i18n": {
