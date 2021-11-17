@@ -4,7 +4,7 @@ import ErrorPage from "next/error"
 import { DefaultSeo } from "next-seo"
 import { getStrapiMedia } from "utils/media"
 import { getGlobalData } from "utils/api"
-import "@/styles/index.css"
+import "../styles/index.css"
 
 const MyApp = ({ Component, pageProps }) => {
   // Extract the data we need
