@@ -40,7 +40,7 @@ export async function getStaticPaths(context) {
     return localePages
   })
 
-  const pages = await (await Promise.all(allPages)).flat()
+  const pages = (await Promise.all(allPages)).flat()
 
   const paths = pages.map((page) => {
     // Decompose the slug that was saved in Strapi

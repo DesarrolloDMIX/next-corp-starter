@@ -8,6 +8,7 @@ import { MdExpandMore } from "react-icons/md"
 import WorldIcon from "./icons/world"
 
 import { useOnClickOutside } from "../utils/hooks"
+import { getLocalizedPage, localizePath } from "utils/localize"
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
@@ -59,7 +60,7 @@ const LocaleSwitch = ({ pageContext }) => {
   }, [locale, router, pageContext])
 
   return (
-    <div ref={select} className="relative ml-4 ">
+    <div ref={select} className="relative ml-4">
       <button
         type="button"
         className="hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-50 focus:text-primary-600 focus:outline-none flex items-center justify-between px-2 py-2 cursor-pointer h-full rounded-md w-20"
@@ -70,9 +71,8 @@ const LocaleSwitch = ({ pageContext }) => {
         <MdExpandMore className="ml-1 text-primary-600" />
       </button>
       <div
-        className={`w-full bg-white p-1 mt-1 shadow-lg rounded-md ${
-          showing ? "absolute" : "hidden"
-        }`}
+        className={`w-full bg-white p-1 mt-1 shadow-lg rounded-md z-50 ${showing ? "absolute" : "hidden"
+          }`}
       >
         {pageContext.localizedPaths &&
           pageContext.localizedPaths.map(({ href, locale }) => {
