@@ -6,33 +6,35 @@ import { mediaPropTypes } from "utils/types"
 const NextImage = ({ media, ...props }) => {
   const { url, alternativeText } = media
 
-  const loader = ({ src }) => {
-    return getStrapiMedia(src)
-  }
+  const imageUrl = getStrapiMedia(url)
+
+  // const loader = ({ src }) => {
+  //   return getStrapiMedia(src)
+  // }
 
   // The image has a fixed width and height
   if (props.width && props.height) {
     return (
-      <Image loader={loader} src={url} alt={alternativeText || ""} {...props} />
+      <Image src={imageUrl} loading="lazy" alt={alternativeText || ""} {...props} />
     )
   }
 
   // The image is responsive
   return (
     <Image
-      loader={loader}
       layout="responsive"
       width={media.width}
       height={media.height}
       objectFit="contain"
-      src={url}
+      src={imageUrl}
+      loading="lazy"
       alt={alternativeText || ""}
     />
   )
 }
 
 Image.propTypes = {
-  media: mediaPropTypes.isRequired,
+  media: mediaPropTypes,
   className: PropTypes.string,
 }
 
