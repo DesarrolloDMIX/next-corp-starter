@@ -10,7 +10,7 @@ const TestComponent = ({ data }) => {
 
 TestComponent.propTypes = {
     data: PropTypes.shape({
-        text: PropTypes.string,
+        title: PropTypes.string,
     }),
 }
 
