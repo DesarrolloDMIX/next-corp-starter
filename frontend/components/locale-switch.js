@@ -86,7 +86,7 @@ const LocaleSwitch = ({ pageContext }) => {
               >
                 <p
                   onClick={() => handleLocaleChange(locale)}
-                  className="capitalize hover:bg-primary-50 hover:text-primary-600  cursor-pointer p-2 rounded-md text-center hover:text-primary-600"
+                  className="capitalize hover:bg-primary-50 cursor-pointer p-2 rounded-md text-center hover:text-primary-600"
                 >
                   {locale}
                 </p>
